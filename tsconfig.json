@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "esnext",                         // Set target ECMAScript version
+    "module": "esnext",                         // Use ES modules
+    "moduleResolution": "node",                 // Resolve modules using Node.js-style resolution
+    "strict": true,                             // Enable strict type checking options
+    "jsx": "react-jsx",                        // Use React JSX (for React 17+)
+    "esModuleInterop": true,                    // Allow default import of CommonJS modules
+    "skipLibCheck": true,                       // Skip type checking of declaration files
+    "forceConsistentCasingInFileNames": true,   // Ensure consistent casing in file imports
+    "resolveJsonModule": true,                  // Allow importing .json files
+    "outDir": "./dist",                         // Output directory for compiled files
+    "baseUrl": ".",                             // Base directory for module resolution
+    "paths": {                                  // Setup path aliases (useful for cleaner imports)
+      "@/*": ["src/*"]
+    }
+  },
+  "allowImportingTsExtensions": true,
+  "include": ["src/**/*.ts", "src/**/*.tsx"],    // Include TypeScript and JSX files
+  "exclude": ["node_modules", "dist"]            // Exclude node_modules and output directory
+}

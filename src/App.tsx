@@ -1,16 +1,17 @@
-// src/App.tsx
 import React, { FC }from 'react';
-import RegisterForm from './components/RegisterForm';
-import UserList from './components/UserList';
-import LoginForm from './components/LoginForm';
+import Login from './pages/Authentication/LoginPage/LoginPage'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import LoginPage from './pages/Authentication/LoginPage/LoginPage'; 
+import HomePage from './pages/HomePage/HomePage';
 
 const App: FC = () => {
   return (
-    <div>
-      <RegisterForm />
-      <LoginForm />
-      <UserList />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/home" element={<HomePage />} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 
