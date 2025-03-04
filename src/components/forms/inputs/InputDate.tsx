@@ -1,20 +1,20 @@
 
 import React from 'react';
 import { Controller } from 'react-hook-form';
-import { Input } from 'antd';
+import { DatePicker } from 'antd';
 
-type InputTextProps = {
+type InputDateProps = {
     placeholder: string;
     name: string;
 }
 
-export const InputText = ((props: InputTextProps) => {
+export const InputDate = ((props: InputDateProps) => {
     const { name, placeholder} = props;
     return (
       <Controller
         name={name}
         render={({ field }) => (
-          <Input
+          <DatePicker
           type='text'
           {...field}
           placeholder={placeholder}

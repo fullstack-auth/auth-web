@@ -20,12 +20,14 @@ const LoginPage = () => {
           navigate('/home');
         } catch (error) { console.error(error) }
       }
+      const redirectToRegisterPage = () => {navigate('/register')}
       
   return (
     <Form defaultValues={{ username: '', password: '' }} onSubmit={onSubmitHandler} title="Login">
       <InputText name="username" placeholder="Username" />
       <InputText name="password" placeholder="Password" />
       <Button type="primary" htmlType="submit">Login</Button>
+      <Button onClick={redirectToRegisterPage}>Register</Button>
     </Form>
   );
 };
