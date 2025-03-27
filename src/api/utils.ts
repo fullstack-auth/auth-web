@@ -14,7 +14,7 @@ export const makeRequest = async (
       'Accept': '*/*',
       'Content-Type': 'application/json',
       ...headers,
-      Authorization: token ? `Bearer ${token}` : '', // Attach token if available
+      Authorization: token ? `Bearer ${token}` : '',
     },
     body: payload ? JSON.stringify(payload) : undefined
   });
@@ -29,15 +29,10 @@ export const isAuthenticated = (): boolean => {
   if (!token) return false;
 
   try {
-    // Split the token into its parts (header, payload, and signature)
     const base64Url = token.split('.')[1];
-    const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/'); // Fix URL encoding
-
-    // Decode the payload part of the token
+    const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
     const decoded = JSON.parse(atob(base64));
     const currentTime = Date.now() / 1000;
-
-    // Check if the token is expired
     if (decoded.exp < currentTime) {
       return false;
     }
