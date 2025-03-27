@@ -1,6 +1,6 @@
 import React, { JSX } from 'react';
 import { Navigate } from 'react-router-dom';
-import { isAuthenticated } from '../api/utils'; // Your auth check function
+import { isAuthenticated } from '../api/utils';
 
 interface AuthRouteProps {
   element: JSX.Element;
@@ -8,9 +8,7 @@ interface AuthRouteProps {
 }
 
 const AuthRoute: React.FC<AuthRouteProps> = ({ element, redirectTo }) => {
-  if (isAuthenticated()) {
-    return <Navigate to={redirectTo} replace />;
-  }
+  if (isAuthenticated()) {return <Navigate to={redirectTo} replace />}
   return element;
 };
 

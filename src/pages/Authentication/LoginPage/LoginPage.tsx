@@ -1,4 +1,3 @@
-import React from 'react';
 import { Form } from '../../../components/forms/Form';
 import { Button } from 'antd';
 import { InputText } from '../../../components/forms/inputs/InputText';
@@ -13,7 +12,7 @@ interface LoginData {
 const LoginPage = () => {
     const navigate = useNavigate();
     const { authenticateUser } = useAuthApi();
-    const onSubmitHandler = async (data: LoginData) => { //Ensure types!!!
+    const onSubmitHandler = async (data: LoginData) => {
         console.log('Request data:', data);
         try {
           await authenticateUser(data);

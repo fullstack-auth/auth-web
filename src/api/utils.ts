@@ -6,7 +6,7 @@ export const makeRequest = async (
   headers: HeadersInit = {},
   payload?: Record<string, any>
 ) => {
-  const token = localStorage.getItem('access_token');  // Retrieve the token
+  const token = localStorage.getItem('access_token');
   
   const response = await fetch(url, {
     method,
@@ -33,6 +33,10 @@ export const isAuthenticated = (): boolean => {
     const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
     const decoded = JSON.parse(atob(base64));
     const currentTime = Date.now() / 1000;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 89605fe (code cleanup)
     if (decoded.exp < currentTime) {
       return false;
     }

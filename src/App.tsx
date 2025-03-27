@@ -10,13 +10,10 @@ const App: React.FC = () => {
   return (
     <Router>
       <Routes>
-        {/* Protect the home route; user must be logged in to access */}
         <Route 
           path="/home" 
           element={<ProtectedRoute element={<HomePage />} redirectTo="/login" />} 
         />
-
-        {/* Protect the login route; user must not be logged in to access */}
         <Route 
           path="/login" 
           element={<AuthRoute element={<LoginPage />} redirectTo="/home" />} 

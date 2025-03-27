@@ -17,7 +17,7 @@ const UserList: React.FC = () => {
   useEffect(() => {
     (async () => {
         try {
-            const response = await fetch('http://localhost:3000/auth/users');
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/auth/users`);
             const data = await response.json();
             setUsers(data);
             setMessage("Fetched successfully...");

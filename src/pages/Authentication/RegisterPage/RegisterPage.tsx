@@ -6,7 +6,6 @@ import { InputDate } from '../../../components/forms/inputs/InputDate';
 import { useNavigate } from 'react-router-dom';
 import { useAuthApi } from "../../../hooks/useAuthApi"
 
-// Define the type for registration data
 interface RegisterData {
   username: string;
   password: string;

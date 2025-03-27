@@ -5,12 +5,8 @@ import { useNavigate } from "react-router-dom";
 const HomePage = () => {
     const navigate = useNavigate();
 
-    // Handle user logout
     const handleLogout = () => {
-        // Remove token from localStorage to log out the user
         localStorage.removeItem('access_token');
-
-        // Redirect to the login page
         navigate('/login');
     };
 
